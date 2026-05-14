@@ -4,10 +4,11 @@
 :root {
   --dark   : #1b1b1b;
   --light  : #ffff;
-  --gray   : #b4b4b48e;
+  --light-d : #f8f8f8ee;
   --gray-l : #cececebe;
+  --gray   : #b4b4b48e;
   --gray-d : #3a3a3a;
-  --bg     : #fff4e5;
+  --bg     : #f0f0f0;
   --btn    : #ffcb5b;
   --red-m  : #bd3535;
   --red-l  : #e03f3f;
@@ -31,8 +32,9 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 230px 1fr;
+  grid-template-columns: 270px 1fr;
   min-height: 100vh;
+  width: 100%;
 }
 
 .sidebar {
@@ -44,12 +46,13 @@ body {
 
 .logo {
   width: 100%;
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding: 8px 13px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 8px;
   color: var(--light);
-  background: var(--dark);
+  background: var(--red-m);
   text-align: center;
+  box-shadow: 10px 0 10px 3px rgba(24, 24, 24, 0.5);
 }
 
 .nav {
@@ -79,15 +82,186 @@ body {
   padding-left: 2rem;
   text-decoration: none;
   color: var(--gray-l);
-  background-color: red;
+  /* background-color: red; */
 }
 .menu ul li a:hover {
   color: var(--red-m);
 }
 
-.card {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-  gap:20px;
-  margin-bottom:25px;
+.main-content {
+  width: 100%;
+  height: 100vh;
 }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  width: 100%;
+  height: 3.5rem;
+  background: var(--light-d);
+  color: var(--gray-d);
+  box-shadow: 3px 0 10px 1px rgba(24, 24, 24, 0.24);
+}
+
+.topbar .btn {
+  font-size: clamp(.9rem, 1.2rem,2rem);
+  background: transparent;
+  color: var(--red-m);
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  border-radius: 12px;
+}
+.topbar .btn i {
+  padding-right: 7px;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search input {
+  width: 450px;
+  height: 30px;
+  border-radius: 50px;
+  outline: none;
+  padding: 15px;
+  padding-right: 30px;
+  border: 1px solid var(--brdr-dark);
+}
+.search input:focus {
+  border: 1px solid var(--red-l);
+}
+.search button {
+  position: absolute;
+  padding: 2px;
+  height: 22px;
+  width: 22px;
+  right: 6px;
+  color: var(--gray-d);
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  background: var(--gray-l);
+}
+.search button:hover {
+  background: var(--red-l);
+}
+.search button i:hover {
+  color: var(--light);
+}
+.search button i {
+  padding: 3px;
+  color: var(--gray-d);
+}
+.notif {
+  position: relative;
+  margin-left: auto;
+  align-items: center;
+}
+
+.notif a {
+  font-size: 1.5rem;
+  color: var(--gray-d);
+}
+.notif .notif-count {
+  position: absolute;
+  bottom: 22px;
+  left: 17px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--light);
+  height: 17px;
+  width: 17px;
+  background: red;
+  border-radius: 50px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-width: 250px;
+}
+
+.profile a {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile i {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  font-size: 1.5rem;
+  color: var(--gray-d);
+  border-radius: 50px;
+  border: 1px solid var(--brdr-dark);
+}
+
+.profile img {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  font-size: 1.5rem;
+  color: var(--gray-d);
+  border-radius: 50px;
+  border: 1px solid var(--brdr-dark);
+}
+
+
+.conten-grid {
+  display: grid;
+  grid-template-areas: "card1 card1 card1 .";
+  grid-gap: 20px;
+  min-height: 100%;
+  margin: 20px;
+}
+
+.card1 {
+  grid-area: card1;
+  width: 100%;
+  height: 100%;
+  background: var(--light-d);
+  margin: 12px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+.card2,
+.card3,
+.card4 {
+  width: 100%;
+  height: 100%;
+  background: var(--light-d);
+  margin: 12px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+
+}
+
+.content {
+  margin: 21px;
+}
+
