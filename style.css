@@ -27,20 +27,21 @@
 html,
 body {
   background-color: var(--bg);
+  min-height: 100vh;
 }
 
 
 .wrapper {
   display: grid;
   grid-template-columns: 270px 1fr;
-  min-height: 100vh;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
 }
 
 .sidebar {
-  background: var(--bgm-dark);
   display: flex;
-  min-height: 100vh;
+  background: var(--brdr-dark);
   overflow: hidden;
 }
 
@@ -90,8 +91,9 @@ body {
 
 .main-content {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
+
 
 .topbar {
   display: flex;
@@ -106,7 +108,7 @@ body {
 }
 
 .topbar .btn {
-  font-size: clamp(.9rem, 1.2rem,2rem);
+  font-size: clamp(.57rem, .97rem,1rem);
   background: transparent;
   color: var(--red-m);
   outline: none;
@@ -233,32 +235,48 @@ body {
 
 .conten-grid {
   display: grid;
-  grid-template-areas: "card1 card1 card1 .";
-  grid-gap: 20px;
-  min-height: 100%;
-  margin: 20px;
+  grid-template-areas: 
+    "card1 card3"
+    "card4 card2"
+    "caed4 card2";
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 12px;
+  width: 100%;
+  height: 100%;
 }
 
 .card1 {
   grid-area: card1;
-  width: 100%;
-  height: 100%;
   background: var(--light-d);
   margin: 12px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
+  height: 300px;
 }
 
-.card2,
-.card3,
-.card4 {
-  width: 100%;
-  height: 100%;
+.card2 {
+  grid-area: card2;
   background: var(--light-d);
   margin: 12px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-
+  height: 300px;
+}
+.card3 {
+  grid-area: card3;
+  background: var(--light-d);
+  margin: 12px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  height: 300px;
+}
+.card4 {
+  grid-area: card4;
+  background: var(--light-d);
+  margin: 12px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  height: 300px;
 }
 
 .content {
